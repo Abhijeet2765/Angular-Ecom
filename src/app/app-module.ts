@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { LgnSgnup } from './lgn-sgnup/lgn-sgnup';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    LgnSgnup
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+app-lgn-sgnup{
+    background-color: var(--Finlandia);
+    background: linear-gradient(to right, var(--Norway), var(--Finlandia));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
