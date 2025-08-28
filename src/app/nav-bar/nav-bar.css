@@ -1,0 +1,153 @@
+.navbar {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--bg);
+      color: var(--text);
+      border-bottom: 1px solid color-mix(in oklab, var(--Finlandia) 70%, black);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 520px) 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* --- Left: brand --- */
+    .brand {
+      display: inline-flex; 
+      align-items: center; 
+      gap: 10px;
+      text-decoration: none; 
+      color: var(--text);
+      font-weight: 700; 
+      letter-spacing: 0.3px;
+    }
+    .brand img {
+      width: 28px; 
+      height: 28px; 
+      border-radius: 6px; 
+      display: block;
+      box-shadow: 0 0 0 2px color-mix(in oklab, var(--Hampton) 25%, transparent);
+    }
+    .brand span { 
+      font-size: 1.05rem; 
+    }
+
+    /* --- Center: search --- */
+    .search {
+      display: flex; align-items: center; gap: 8px;
+      background: color-mix(in oklab, var(--Finlandia) 75%, white);
+      border: 1px solid var(--ring);
+      padding: 8px 10px;
+      border-radius: 999px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.12) inset;
+    }
+    .search i { 
+      opacity: .9; 
+    }
+    .search input {
+      flex: 1;
+      background: transparent;
+      border: 0; 
+      outline: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .search input::placeholder { 
+      color: var(--text); 
+    }
+    .search button {
+      border: 0; 
+      border-radius: 999px; 
+      padding: 8px 14px;
+      background: var(--chip); 
+      color: var(--chipText);
+      font-weight: 600; 
+      cursor: pointer;
+    }
+    .search button:focus-visible { 
+      outline: 2px solid var(--ring); 
+      outline-offset: 2px; 
+    }
+    .search:focus-within { 
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--Edward) 60%, transparent); }
+
+    /* --- Right: actions --- */
+    .actions {
+      display: flex; 
+      justify-content: flex-end; 
+      align-items: center; gap: 10px;
+    }
+    .icon-btn {
+      position: relative;
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center;
+      width: 38px; 
+      height: 38px; 
+      border-radius: 999px;
+      border: 1px solid var(--ring);
+      background: color-mix(in oklab, var(--Finlandia) 80%, white);
+      color: var(--text); 
+      cursor: pointer;
+      transition: transform .06s ease, background .2s ease;
+    }
+    .icon-btn:hover { background: var(--hover); transform: translateY(-1px); }
+    .badge {
+      position: absolute; 
+      top: -6px; 
+      right: -6px;
+      background: var(--Hampton); 
+      color: #2c2c2c;
+      min-width: 18px; 
+      height: 18px; 
+      padding: 0 5px;
+      border-radius: 999px; 
+      font-size: 11px; 
+      font-weight: 700;
+      display: grid; 
+      place-items: center;
+      border: 1px solid color-mix(in oklab, var(--Hampton) 60%, black);
+    }
+
+    .login {
+      display: inline-flex; 
+      align-items: center; gap: 8px;
+      background: transparent; 
+      color: var(--text);
+      border: 1px solid var(--ring); 
+      border-radius: 999px;
+      padding: 6px 10px; 
+      cursor: pointer;
+      transition: background .2s ease, transform .06s ease;
+    }
+    .login:hover { 
+      background: var(--hover); 
+      transform: translateY(-1px); 
+    }
+    .login img {
+      width: 28px; 
+      height: 28px; 
+      border-radius: 999px; 
+      object-fit: cover;
+      box-shadow: 0 0 0 2px color-mix(in oklab, var(--Edward) 40%, transparent);
+    }
+    .login span { 
+      font-weight: 600; 
+      font-size: .95rem; 
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .nav-inner {
+        grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
+      }
+      .search { grid-column: 1 / -1; }
+    }
+    @media (max-width: 520px) {
+      .nav-inner { grid-template-columns: 1fr; gap: 10px; }
+      .actions { justify-content: flex-start; }
+    }

@@ -1,0 +1,69 @@
+  body {
+      background-color: var(--Norway);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: var(--Hampton);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      width: 280px;
+      text-align: center;
+      border: 5px solid var(--Finlandia);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      display: block;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card-title {
+      color: var(--Finlandia);
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .card-description {
+      color: #333;
+      font-size: 0.9rem;
+      margin: 10px 0;
+    }
+
+    .card-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--Finlandia);
+      margin: 12px 0;
+    }
+
+    .btn {
+      background-color: var(--Finlandia);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #3a4738;
+    }
+@media (max-width: 768px) {
+  .product-card img {
+    height: 180px;
+  }
+}

@@ -5,10 +5,27 @@
     --Hampton: #e6d5a9;
     --Norway: #afbea2;
     --Edward: #9cb4ac;
+
+    --bg: var(--Finlandia);
+    --text: var(--Hampton);
+    --muted: color-mix(in oklab, var(--Hampton) 70%, black);
+    --chip: var(--Norway);
+    --chipText: #1a1f19;
+    --hover: color-mix(in oklab, var(--Finlandia) 85%, white);
+    --ring: var(--Edward);
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
+}
+app-lgn-sgnup{
+    background-color: var(--Finlandia);
+    background: linear-gradient(to right, var(--Norway), var(--Finlandia));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
 }

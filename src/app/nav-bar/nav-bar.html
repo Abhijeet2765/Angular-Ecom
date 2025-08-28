@@ -1,0 +1,39 @@
+<nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Left: Brand + favicon -->
+      <a href="#" class="brand" aria-label="Homepage">
+        <!-- Use the same image as favicon for visual brand consistency -->
+        <img src="" alt="Brand icon" width="64" height="64"/>
+        <span>E-Com</span>
+      </a>
+
+      <!-- Center: Rounded Search -->
+      <form class="search" role="search" aria-label="Site search" onsubmit="event.preventDefault(); /* hook up your search */">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="Search products…" aria-label="Search products" />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Right: Wishlist, Cart, Login -->
+      <div class="actions">
+        <button class="icon-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <span class="badge" aria-hidden="true">3</span>
+        </button>
+
+        <button class="icon-btn" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+          <span class="badge" aria-hidden="true">2</span>
+        </button>
+
+        <button class="login" aria-label="Login" *ngIf="!auth.isLoggedIn()" (click)="handleLogin()">
+          <!-- Replace with your user/avatar PNG -->
+          <img src="" alt="User avatar" width="64" height="64">
+          <span>Login</span>
+        </button>
+        <button *ngIf="auth.isLoggedIn()" (click)="handleLogout()">Logout</button>
+      </div>
+
+    </div>
+  </nav>
