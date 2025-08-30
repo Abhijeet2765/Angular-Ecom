@@ -1,36 +1,50 @@
-
 <div class="container my-4">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      
-      <!-- Cart Item Card -->
-      <div class="cart-card d-flex flex-column flex-md-row align-items-center">
-        
+    <div class="col-md-10">
+      <div><h1>Shopping Cart: </h1></div>
+
+      <!-- Loop Cart Items -->
+      <div *ngFor="let item of cartItems; let i = index" 
+           class="cart-card d-flex flex-column flex-md-row align-items-center mb-3">
+
+        <!-- Checkbox -->
+        <div class="d-flex align-items-center me-3 mb-2 mb-md-0">
+          <input type="checkbox" [(ngModel)]="item.selected" class="form-check-input">
+        </div>
+
         <!-- Product Image -->
-        <img src="https://via.placeholder.com/120" 
+        <img [src]="item.image" 
              class="img-fluid rounded me-md-3 mb-3 mb-md-0" 
-             alt="Product" 
+             alt="Product"
              style="width:120px; height:120px; object-fit:cover;">
-        
-        <!-- Product Details + Buttons beside image -->
+
+        <!-- Product Details -->
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center w-100">
           
-          <!-- Text Section -->
+          <!-- Item Text -->
           <div class="me-md-3 text-center text-md-start">
-            <h5 class="card-title">Premium Handbag</h5>
-            <p class="price mb-1">$129.99</p>
-            <p class="quantity">Quantity: 2</p>
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="price mb-1">${{ item.price }}</p>
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
           </div>
           
           <!-- Action Buttons -->
           <div class="d-flex gap-2 justify-content-center justify-content-md-end mt-2 mt-md-0">
-            <button class="btn btn-theme">-</button>
-            <button class="btn btn-theme">+</button>
-            <button class="btn btn-remove">Remove</button>
+            <button class="btn btn-theme" (click)="decreaseQty(i)">-</button>
+            <button class="btn btn-theme" (click)="increaseQty(i)">+</button>
+            <button class="btn btn-remove" (click)="removeItem(i)">Remove</button>
           </div>
 
         </div>
 
+      </div>
+
+      <!-- Total & Checkout -->
+      <div class="cart-card mt-4 text-center text-md-end">
+        <h5>Total: ${{ getTotal() }}</h5>
+        <button class="btn btn-theme mt-2">
+          Proceed to Checkout
+        </button>
       </div>
 
     </div>

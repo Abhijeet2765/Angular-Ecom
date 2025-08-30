@@ -1,56 +1,46 @@
+:root {
+  --Finlandia: #51624f;
+  --Hampton: #e6d5a9;
+  --Norway: #afbea2;
+  --Edward: #9cb4ac;
+}
 
-    .cart-card {
-      background-color: var(--Hampton);
-      border: 1px solid var(--Edward);
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 1rem;
-      transition: transform 0.2s ease;
-    }
+.cart-card {
+  background-color: var(--Hampton);
+  border: 1px solid var(--Edward);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
 
-    .cart-card:hover {
-      transform: scale(1.02);
-    }
+.cart-card:hover {
+  transform: scale(1.02);
+}
 
-    .cart-card .card-title {
-      color: var(--Finlandia);
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
+.card-title, .price {
+  color: var(--Finlandia);
+  font-weight: 600;
+}
 
-    .cart-card .price {
-      color: var(--Finlandia);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
+.btn-theme {
+  background-color: var(--Finlandia);
+  color: var(--Hampton);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+}
 
-    .cart-card .quantity {
-      color: var(--Edward);
-      font-size: 0.9rem;
-    }
+.btn-theme:hover {
+  background-color: var(--Norway);
+  color: var(--Finlandia);
+}
 
-    .btn-theme {
-      background-color: var(--Finlandia);
-      color: var(--Hampton);
-      border: none;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
+.btn-remove {
+  background-color: crimson;
+  color: white;
+}
 
-    .btn-theme:hover {
-      background-color: var(--Norway);
-      color: var(--Finlandia);
-    }
-
-    .btn-remove {
-      background-color: crimson;
-      color: white;
-      border-radius: 6px;
-    }
-
-    .btn-remove:hover {
-      background-color: darkred;
-      color: white;
-    }
+.btn-remove:hover {
+  background-color: darkred;
+}
