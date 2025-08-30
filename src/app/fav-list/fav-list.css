@@ -1,0 +1,57 @@
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .fav-card {
+      background-color: var(--Hampton);
+      border: 1px solid var(--Edward);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .fav-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .fav-card .card-title {
+      color: var(--Finlandia);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .fav-card .price {
+      color: var(--Finlandia);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .btn-theme {
+      background-color: var(--Finlandia);
+      color: var(--Hampton);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn-theme:hover {
+      background-color: var(--Norway);
+      color: var(--Finlandia);
+    }
+
+    .btn-remove {
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .btn-remove:hover {
+      background-color: darkred;
+    }
