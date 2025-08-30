@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Card } from './card/card';
 import { NavBar } from './nav-bar/nav-bar';
 import { Dashboard } from './dashboard/dashboard';
+import { Cart } from './cart/cart';
+import { FavList } from './fav-list/fav-list';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { Dashboard } from './dashboard/dashboard';
     LgnSgnup,
     Card,
     NavBar,
-    Dashboard
+    Dashboard,
+    Cart,
+    FavList
   ],
   imports: [
     BrowserModule,

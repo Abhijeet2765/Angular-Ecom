@@ -1,0 +1,56 @@
+
+    .cart-card {
+      background-color: var(--Hampton);
+      border: 1px solid var(--Edward);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .cart-card:hover {
+      transform: scale(1.02);
+    }
+
+    .cart-card .card-title {
+      color: var(--Finlandia);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .cart-card .price {
+      color: var(--Finlandia);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .cart-card .quantity {
+      color: var(--Edward);
+      font-size: 0.9rem;
+    }
+
+    .btn-theme {
+      background-color: var(--Finlandia);
+      color: var(--Hampton);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn-theme:hover {
+      background-color: var(--Norway);
+      color: var(--Finlandia);
+    }
+
+    .btn-remove {
+      background-color: crimson;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .btn-remove:hover {
+      background-color: darkred;
+      color: white;
+    }

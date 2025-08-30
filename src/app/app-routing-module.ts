@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LgnSgnup } from './lgn-sgnup/lgn-sgnup';
 import { Dashboard } from './dashboard/dashboard';
 import { authGuard } from './auth/auth-guard';
+import { FavList } from './fav-list/fav-list';
+import { Cart } from './cart/cart';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'login', component: LgnSgnup },
-  { path: 'dashboard', component: Dashboard, canActivate: [authGuard] }
+  { path: 'dashboard', component: Dashboard},
+  { path: 'fav-list',component:FavList,canActivate:[authGuard]},
+  { path: 'cart',component:Cart,canActivate:[authGuard]}
 ];
 
 @NgModule({

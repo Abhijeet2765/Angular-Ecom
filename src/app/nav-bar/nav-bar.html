@@ -4,7 +4,7 @@
       <!-- Left: Brand + favicon -->
       <a href="#" class="brand" aria-label="Homepage">
         <!-- Use the same image as favicon for visual brand consistency -->
-        <img src="" alt="Brand icon" width="64" height="64"/>
+        <img src="assets/images/key-person.png" alt="Brand icon" width="64" height="64"/>
         <span>E-Com</span>
       </a>
 
@@ -17,22 +17,43 @@
 
       <!-- Right: Wishlist, Cart, Login -->
       <div class="actions">
-        <button class="icon-btn" aria-label="Wishlist">
+        <button class="icon-btn" aria-label="Wishlist" (click)="goToFavList()">
           <i class="fa-regular fa-heart" aria-hidden="true"></i>
           <span class="badge" aria-hidden="true">3</span>
         </button>
 
-        <button class="icon-btn" aria-label="Cart">
+        <button class="icon-btn" aria-label="Cart" (click)="goToCart()">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           <span class="badge" aria-hidden="true">2</span>
         </button>
 
+        <div class="profile-menu" *ngIf="auth.isLoggedIn()">
+          <button class="profile-btn" (click)="toggleDropdown()">
+            <img src="assets/images/boy.png" alt="User avatar" />
+          </button>
+
+          <!-- Dropdown -->
+          <div class="dropdown design" [class.show]="dropdownOpen">
+            <div class="dropdown-item user-info">
+              <img src="assets/images/boy.png" alt="User avatar" />
+              <span>Abhijeet Deshmukh</span>
+            </div>
+            <div class="dropdown-item ">
+              <i class="fa-solid fa-gear" class="design"></i>
+              <span>Settings</span>
+            </div>
+            <div class="dropdown-item logout design" (click)="handleLogout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Logout</span>
+            </div>
+          </div>
+          </div>
         <button class="login" aria-label="Login" *ngIf="!auth.isLoggedIn()" (click)="handleLogin()">
           <!-- Replace with your user/avatar PNG -->
-          <img src="" alt="User avatar" width="64" height="64">
+          <img src="assets/images/key-person.png" alt="User avatar" width="64" height="64">
           <span>Login</span>
         </button>
-        <button *ngIf="auth.isLoggedIn()" (click)="handleLogout()">Logout</button>
+        
       </div>
 
     </div>

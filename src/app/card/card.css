@@ -13,8 +13,12 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       overflow: hidden;
       width: 280px;
+      height: 400px;
       text-align: center;
       border: 5px solid var(--Finlandia);
+    }
+    .card:hover{
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 
     .card img {
