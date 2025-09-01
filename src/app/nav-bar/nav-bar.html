@@ -1,60 +1,59 @@
 <nav class="navbar" aria-label="Main navigation">
-    <div class="nav-inner">
+  <div class="nav-inner">
 
-      <!-- Left: Brand + favicon -->
-      <a href="#" class="brand" aria-label="Homepage">
-        <!-- Use the same image as favicon for visual brand consistency -->
-        <img src="assets/images/key-person.png" alt="Brand icon" width="64" height="64"/>
-        <span>E-Com</span>
-      </a>
+    <!-- Left: Brand + favicon -->
+    <a href="#" class="brand" aria-label="Homepage">
+      <img src="assets/images/key-person.png" alt="Brand icon" />
+      <span>E-Com</span>
+    </a>
 
-      <!-- Center: Rounded Search -->
-      <form class="search" role="search" aria-label="Site search" onsubmit="event.preventDefault(); /* hook up your search */">
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input type="search" placeholder="Search products…" aria-label="Search products" />
-        <button type="submit">Search</button>
-      </form>
+    <!-- Center: Search -->
+    <form class="search" role="search" aria-label="Site search" 
+          onsubmit="event.preventDefault();">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" placeholder="Search products…" aria-label="Search products" />
+      <button type="submit">Search</button>
+    </form>
 
-      <!-- Right: Wishlist, Cart, Login -->
-      <div class="actions">
-        <button class="icon-btn" aria-label="Wishlist" (click)="goToFavList()">
-          <i class="fa-regular fa-heart" aria-hidden="true"></i>
-          <span class="badge" aria-hidden="true">3</span>
+    <!-- Right: Wishlist, Cart, Login/Profile -->
+    <div class="actions">
+      <button class="icon-btn" aria-label="Wishlist" (click)="goToFavList()">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge">3</span>
+      </button>
+
+      <button class="icon-btn" aria-label="Cart" (click)="goToCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge">2</span>
+      </button>
+
+      <!-- Profile menu (if logged in) -->
+      <div class="profile-menu" *ngIf="auth.isLoggedIn()">
+        <button class="profile-btn" (click)="toggleDropdown()">
+          <img src="assets/images/boy.png" alt="User avatar" />
         </button>
 
-        <button class="icon-btn" aria-label="Cart" (click)="goToCart()">
-          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-          <span class="badge" aria-hidden="true">2</span>
-        </button>
-
-        <div class="profile-menu" *ngIf="auth.isLoggedIn()">
-          <button class="profile-btn" (click)="toggleDropdown()">
+        <div class="dropdown" [class.show]="dropdownOpen">
+          <div class="dropdown-item user-info">
             <img src="assets/images/boy.png" alt="User avatar" />
-          </button>
-
-          <!-- Dropdown -->
-          <div class="dropdown design" [class.show]="dropdownOpen">
-            <div class="dropdown-item user-info">
-              <img src="assets/images/boy.png" alt="User avatar" />
-              <span>Abhijeet Deshmukh</span>
-            </div>
-            <div class="dropdown-item ">
-              <i class="fa-solid fa-gear" class="design"></i>
-              <span>Settings</span>
-            </div>
-            <div class="dropdown-item logout design" (click)="handleLogout()">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <span>Logout</span>
-            </div>
+            <span>Abhijeet Deshmukh</span>
           </div>
+          <div class="dropdown-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
           </div>
-        <button class="login" aria-label="Login" *ngIf="!auth.isLoggedIn()" (click)="handleLogin()">
-          <!-- Replace with your user/avatar PNG -->
-          <img src="assets/images/key-person.png" alt="User avatar" width="64" height="64">
-          <span>Login</span>
-        </button>
-        
+          <div class="dropdown-item logout" (click)="handleLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+          </div>
+        </div>
       </div>
 
+      <!-- Login button (if not logged in) -->
+      <button class="login" *ngIf="!auth.isLoggedIn()" (click)="handleLogin()">
+        <img src="assets/images/key-person.png" alt="User avatar">
+        <span>Login</span>
+      </button>
     </div>
-  </nav>
+  </div>
+</nav>

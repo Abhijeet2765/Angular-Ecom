@@ -38,7 +38,9 @@
 
     /* --- Center: search --- */
     .search {
-      display: flex; align-items: center; gap: 8px;
+      display: flex; 
+      align-items: center; 
+      gap: 8px;
       background: color-mix(in oklab, var(--Finlandia) 75%, white);
       border: 1px solid var(--ring);
       padding: 8px 10px;
@@ -204,11 +206,11 @@
   border: 1px solid var(--ring);
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  width: 180px;
   display: none;
   flex-direction: column;
   padding: 8px 0;
   z-index: 100;
+  min-width: 200px;
 }
 
 .dropdown.show {
@@ -255,8 +257,23 @@
   .nav-inner {
     grid-template-columns: 1fr;
     gap: 10px;
+    display: flex;
+    flex-direction: column;  /* stack items */
+    align-items: stretch;
   }
   .actions {
     justify-content: flex-start;
+  }
+  .search {
+    order: 2;
+  }
+  .actions {
+    order: 1; /* Actions stay on top */
+  }
+  .dropdown {
+    left: -20px;
+    right: auto;
+    border-radius: 0 0 12px 12px; 
+    min-width: 180px;
   }
 }

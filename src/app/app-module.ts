@@ -10,6 +10,8 @@ import { NavBar } from './nav-bar/nav-bar';
 import { Dashboard } from './dashboard/dashboard';
 import { Cart } from './cart/cart';
 import { FavList } from './fav-list/fav-list';
+import { Landing } from './landing/landing';
+import { Footer } from './footer/footer';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FavList } from './fav-list/fav-list';
     NavBar,
     Dashboard,
     Cart,
-    FavList
+    FavList,
+    Landing,
+    Footer
   ],
   imports: [
     BrowserModule,

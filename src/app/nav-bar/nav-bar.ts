@@ -32,4 +32,7 @@ export class NavBar {
     this.router.navigate(['/cart']);
   }
 
+
+  
+
 }
