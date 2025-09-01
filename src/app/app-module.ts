@@ -12,6 +12,7 @@ import { Cart } from './cart/cart';
 import { FavList } from './fav-list/fav-list';
 import { Landing } from './landing/landing';
 import { Footer } from './footer/footer';
+import { ItemDescription } from './item-description/item-description';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Footer } from './footer/footer';
     Cart,
     FavList,
     Landing,
-    Footer
+    Footer,
+    ItemDescription
   ],
   imports: [
     BrowserModule,

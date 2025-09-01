@@ -1,0 +1,224 @@
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+}
+
+.product-gallery {
+  text-align: center;
+}
+
+.product-gallery .main-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail-row img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnail-row img:hover {
+  border: 2px solid var(--Finlandia);
+}
+
+.product-info {
+  color: #333;
+}
+
+.product-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.product-short {
+  margin: 10px 0;
+  color: #555;
+}
+
+.rating {
+  margin: 10px 0;
+  color: #f39c12;
+}
+
+.price {
+  margin: 15px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.price .old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.price .discount {
+  color: red;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.quantity {
+  margin: 20px 0;
+}
+
+.quantity input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+}
+
+.actions {
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.add-to-cart {
+  background: var(--Finlandia);
+  color: var(--Hampton);
+}
+
+.buy-now {
+  background: var(--Hampton);
+  color: #333;
+}
+
+.product-details {
+  margin-top: 20px;
+}
+
+.reviews-section {
+  padding: 30px;
+  background: #f8f8f8;
+  margin-top: 40px;
+  border-radius: 12px;
+}
+
+.review {
+  margin-bottom: 15px;
+}
+
+.related-products {
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.related-grid .card {
+  background: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.size-select {
+  margin: 15px 0;
+}
+
+.size-select label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.size-select select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.size-select select:hover,
+.size-select select:focus {
+  border-color: var(--Finlandia);
+  outline: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-page {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .thumbnail-row {
+    justify-content: center;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Wishlist button near product title */
+.wishlist-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: var(--Finlandia);
+  transition: color 0.3s;
+}
+
+.wishlist-btn:hover {
+  color: red;
+}
+
+/* Heart icon over main product image */
+.wishlist-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.wishlist-icon:hover {
+  color: red;
+}
+
+/* Ensure product-gallery supports overlay */
+.product-gallery {
+  position: relative;
+}
+
+
+@media (max-width: 480px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
