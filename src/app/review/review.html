@@ -1,1 +1,40 @@
-<p>review works!</p>
+<section class="reviews-section">
+  <h2>Customer Reviews</h2>
+
+  <!-- Review Form -->
+  <div class="review-form">
+    <h3>Write a Review</h3>
+    <input type="text" [(ngModel)]="newReview.name" placeholder="Your Name" />
+
+    <!-- Star Rating -->
+    <div class="rating-input">
+      <span *ngFor="let star of [1,2,3,4,5]" 
+            (click)="setRating(star)"
+            [class.active]="star <= newReview.rating">
+        ⭐
+      </span>
+    </div>
+
+    <textarea [(ngModel)]="newReview.comment" placeholder="Share your experience..." rows="4"></textarea>
+    <button (click)="submitReview()">Submit Review</button>
+  </div>
+
+  <!-- Reviews List -->
+  <div class="reviews-list">
+    <div class="review-card" *ngFor="let review of reviews">
+      <div class="review-header">
+        <img [src]="review.avatar" alt="User" class="review-avatar" />
+        <div>
+          <h4>{{ review.name }}</h4>
+          <span class="review-date">{{ review.date }}</span>
+        </div>
+      </div>
+      <div class="review-rating">
+        <span *ngFor="let star of [1,2,3,4,5]">
+          {{ star <= review.rating ? '⭐' : '☆' }}
+        </span>
+      </div>
+      <p>{{ review.comment }}</p>
+    </div>
+  </div>
+</section>

@@ -4,12 +4,19 @@
   <!-- Left: Product Images -->
   <div class="product-gallery">
     <div class="wishlist-icon">❤️</div>
-    <img src="assets/images/Jacket1.jpeg" alt="Product" class="main-image">
+
+    <!-- Main Image -->
+    <img [src]="mainImage" alt="Product" class="main-image">
+
+    <!-- Thumbnails -->
     <div class="thumbnail-row">
-      <img src="assets/images/Jacket2.jpeg" alt="thumb">
-      <img src="assets/images/Jacket3.jpeg" alt="thumb">
-      <img src="assets/images/Jacket4.jpeg" alt="thumb">
-      <img src="assets/images/Jacket1.jpeg" alt="thumb">
+      <img 
+        *ngFor="let thumb of thumbnails" 
+        [src]="thumb" 
+        alt="thumb"
+        (click)="selectImage(thumb)"
+        [class.active]="thumb === mainImage"
+      >
     </div>
   </div>
 
@@ -62,6 +69,9 @@
       </ul>
     </div>
   </div>
+</div>
+<div>
+  <app-review></app-review>
 </div>
 <div class="related-products">
   <h2>Related Products</h2>

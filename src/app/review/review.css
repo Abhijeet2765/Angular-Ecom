@@ -1,0 +1,95 @@
+.reviews-section {
+  padding: 40px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.reviews-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Review Form */
+.review-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.review-form h3 {
+  margin-bottom: 10px;
+}
+
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  resize: none;
+}
+
+.review-form button {
+  margin-top: 12px;
+  background: #51624f; /* Finlandia */
+  color: #e6d5a9;       /* Hampton */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.review-form button:hover {
+  background: #3d4c3c;
+}
+
+/* Review Cards */
+.review-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.reviewer-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 13px;
+  color: #777;
+}
+
+.review-rating {
+  font-size: 18px;
+  color: #ff9800;
+  margin: 6px 0;
+}
+
+.review-text {
+  font-size: 15px;
+  color: #444;
+}
