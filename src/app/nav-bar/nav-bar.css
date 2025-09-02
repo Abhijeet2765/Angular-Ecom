@@ -18,6 +18,7 @@
     /* --- Left: brand --- */
     .brand {
       display: inline-flex; 
+      justify-content: flex-start;
       align-items: center; 
       gap: 10px;
       text-decoration: none; 
@@ -39,11 +40,12 @@
     /* --- Center: search --- */
     .search {
       display: flex; 
+      justify-content: center;
       align-items: center; 
       gap: 8px;
       background: color-mix(in oklab, var(--Finlandia) 75%, white);
       border: 1px solid var(--ring);
-      padding: 8px 10px;
+      padding: 8px 5px;
       border-radius: 999px;
       box-shadow: 0 2px 12px rgba(0,0,0,.12) inset;
     }
@@ -56,7 +58,7 @@
       border: 0; 
       outline: none;
       color: var(--text);
-      font-size: 0.95rem;
+      font-size: 14px;
     }
     .search input::placeholder { 
       color: var(--text); 
@@ -67,7 +69,7 @@
       padding: 8px 14px;
       background: var(--chip); 
       color: var(--chipText);
-      font-weight: 600; 
+      font-weight: 400; 
       cursor: pointer;
     }
     .search button:focus-visible { 
@@ -82,7 +84,9 @@
     .actions {
       display: flex; 
       justify-content: flex-end; 
-      align-items: center; gap: 10px;
+      align-items: center;  
+      gap: 15px;
+      margin-left: 40px;
     }
     .icon-btn {
       position: relative;
@@ -118,7 +122,9 @@
 
     .logout{
       display: inline-flex; 
-      align-items: center; gap: 8px;
+      align-items: center; 
+      justify-content: center;
+      gap: 8px;
       background: transparent; 
       color: var(--text);
       border: 1px solid var(--ring); 
@@ -129,7 +135,9 @@
     }
     .login {
       display: inline-flex; 
-      align-items: center; gap: 8px;
+      align-items: center;
+      justify-content: center; 
+      gap: 8px;
       background: transparent; 
       color: var(--text);
       border: 1px solid var(--ring); 

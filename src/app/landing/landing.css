@@ -1,37 +1,35 @@
 #productCarousel {
-  height: 50vh;
+  height: 90vh; /* set carousel height */
 }
 
 #productCarousel .carousel-inner,
 #productCarousel .carousel-item {
-  height: 50vh; /* full viewport height */
+  height: 90vh; /* make inner items full height */
 }
 
-/* Center and contain the image without breaking carousel display logic */
-#productCarousel .carousel-item > img {
+#productCarousel .carousel-item img {
   height: 100%;
-  width: auto;          /* keep aspect ratio */
-  max-width: 100%;      /* prevent overflow on narrow screens */
-  object-fit: contain;  /* fit entirely in view */
+  width: 100%;
+  object-fit: cover;   /* fit without cropping */
+  margin: 0 auto;        /* center horizontally */
   display: block;
-  margin: 0 auto;       /* horizontal center */
 }
 
-/* (Optional) dark backdrop behind images */
-#productCarousel .carousel-item {
-  background: #000;
-}
 
 .category-grid {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 5 per row */
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 6 per row on desktop */
+  gap: 40px;
+  padding: 40px;
   background: var(--Finlandia); 
+  justify-content: center;
 }
 
 .category-card {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
   background: #2a2a2a;
   border-radius: 12px;
   overflow: hidden;
@@ -39,22 +37,32 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  overflow: visible;
 }
 
 .category-card img {
-  width: 100%;
-  height: 120px;
+  position :relative;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto;
+  margin-top: -10px;
   display: block;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  z-index:2;
+  transition: all 0.3s ease;
 }
 
 .category-card span {
+  position: relative;
   display: block;
   padding: 10px;
   font-size: 16px;
   color: var(--Hampton);
   font-weight: 600;
+  z-index: 1;
 }
 
 .category-card:hover,
@@ -63,32 +71,46 @@
   box-shadow: 0 0 12px rgba(230,213,169,0.6);
   transform: translateY(-4px);
 }
+.category-card:hover img,
+.category-card.active img {
+  transform: scale(1.1) translateY(-6px); /* zoom + move up */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* shadow around image */
+  border-radius: 12px;
+}
 
+/* Tablet */
 @media (max-width: 768px) {
   .category-grid {
-    grid-template-columns: repeat(4, 1fr); /* 2 per row */
-    gap: 10px;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3 per row */
+    gap: 15px;
   }
 
   .category-card img {
-    display: none !important;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
   }
 
   .category-card span {
     font-size: 14px;
-    padding: 15px;
-    background: #333;
-    border-radius: 8px;
+    padding: 8px;
   }
 }
-
+/* Mobile */
 @media (max-width: 480px) {
   .category-grid {
-    grid-template-columns: repeat(2,1fr); /* 1 per row */
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 2 per row */
+    gap: 10px;
+  }
+
+  .category-card img {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
   }
 
   .category-card span {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 13px;
+    padding: 6px;
   }
 }

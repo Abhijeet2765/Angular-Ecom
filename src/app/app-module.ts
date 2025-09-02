@@ -13,6 +13,7 @@ import { FavList } from './fav-list/fav-list';
 import { Landing } from './landing/landing';
 import { Footer } from './footer/footer';
 import { ItemDescription } from './item-description/item-description';
+import { Review } from './review/review';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ItemDescription } from './item-description/item-description';
     FavList,
     Landing,
     Footer,
-    ItemDescription
+    ItemDescription,
+    Review
   ],
   imports: [
     BrowserModule,
