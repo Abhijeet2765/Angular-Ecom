@@ -249,7 +249,19 @@
   height: 28px;
   border-radius: 50%;
 }
+.user-info span {
+  display: block;  /* ✅ each span will be on a new line */
+  line-height: 1.4; /* optional: spacing */
+}
 
+.user-name {
+  font-weight: 600;
+}
+
+.user-role {
+  font-size: 0.9rem;
+  color: gray;
+}
 
 @media (max-width: 900px) {
   .nav-inner {

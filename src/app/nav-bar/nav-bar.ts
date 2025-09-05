@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { Auth } from '../auth';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Auth } from '../shared/service/auth-service/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css'
 })
-export class NavBar {
+export class NavBar implements OnInit {
+  userfirstname:string='';
+  userlastname:string='';
+  designation:string='';
   constructor(public auth: Auth,private router: Router) {}
+  ngOnInit(): void {
+    this.loadUser();
+  }
   dropdownOpen = false;
 
   toggleDropdown() {
@@ -30,6 +36,20 @@ export class NavBar {
 
   goToCart(){
     this.router.navigate(['/cart']);
+  }
+
+  private loadUser(): void {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      try {
+        const user = JSON.parse(storedUser);
+        this.userfirstname = user.firstName || '';
+        this.userlastname = user.lastName || '';
+        this.designation=user.designation || '';
+      } catch (err) {
+        console.error('Invalid user JSON in localStorage', err);
+      }
+    }
   }
 
 

@@ -19,8 +19,8 @@ export class Landing implements AfterViewInit{
     productId: string | null = null;
 
   ngOnInit(): void {
-    this.productId = this.route.snapshot.paramMap.get('id');
-    console.log('Product ID:', this.productId);
+    //this.productId = this.route.snapshot.paramMap.get('id');
+    //console.log('Product ID:', this.productId);
     // 🔥 fetch product details by ID from service here
   }
 }

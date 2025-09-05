@@ -36,9 +36,12 @@
         <div class="dropdown" [class.show]="dropdownOpen">
           <div class="dropdown-item user-info">
             <img src="assets/images/boy.png" alt="User avatar" />
-            <span>Abhijeet Deshmukh</span>
+            <div class="user-text">
+              <div class="user-name">{{userfirstname}} {{userlastname}}</div>
+              <div class="user-role">{{designation}}</div>
+            </div>
           </div>
-          <div class="dropdown-item">
+          <div class="dropdown-item" [routerLink]="['/settings']">
             <i class="fa-solid fa-gear"></i>
             <span>Settings</span>
           </div>

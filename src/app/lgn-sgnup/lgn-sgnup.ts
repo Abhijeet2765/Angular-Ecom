@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder } from '@angular/forms';
-import { Auth } from '../auth';
+import { Auth } from '../shared/service/auth-service/auth';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-lgn-sgnup',
@@ -12,8 +12,9 @@ export class LgnSgnup implements OnInit{
   Register:FormGroup;
   loginForm: FormGroup;
   errorMessage = '';
+  successMessage: string = '';
 
-  constructor(private fb: FormBuilder, private auth: Auth, private router: Router){
+  constructor(private fb: FormBuilder, private auth: Auth, private router: Router,private authService:Auth){
     this.Register = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -63,14 +64,22 @@ export class LgnSgnup implements OnInit{
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      const success = this.auth.login(email, password);
-      if (success) {
-        this.router.navigate(['/dashboard']);
-      } else {
-        this.errorMessage = 'Invalid email or password';
-      }
+   if (this.loginForm.invalid) {
+      this.errorMessage = 'Please fill all fields correctly.';
+      return;
     }
+
+    this.authService.login(this.loginForm.value).subscribe({
+      next: (res) => {
+        this.successMessage = 'Login successful!';
+        this.errorMessage = '';
+        localStorage.setItem('user', JSON.stringify(res.empDetails));
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        this.errorMessage = err;
+        this.successMessage = '';
+      }
+    });
   }
 }

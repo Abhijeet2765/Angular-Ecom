@@ -14,6 +14,8 @@ import { Landing } from './landing/landing';
 import { Footer } from './footer/footer';
 import { ItemDescription } from './item-description/item-description';
 import { Review } from './review/review';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Settings } from './settings/settings';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { Review } from './review/review';
     Landing,
     Footer,
     ItemDescription,
-    Review
+    Review,
+    Settings
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
